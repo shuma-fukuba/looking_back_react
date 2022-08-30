@@ -19,7 +19,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 export default configureStore({
   reducer: reducer(history),
-  middleware: composeEnhancers(
-    applyMiddleware(routerMiddleware(history), thunkMiddleware)
-  ),
+  // middleware: composeEnhancers(
+  //   applyMiddleware(routerMiddleware(history), thunkMiddleware)
+  // ),
 })
