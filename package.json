@@ -36,6 +36,7 @@
     "jest-dom": "^4.0.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.31",
     "query-string": "^6.10.1",
     "react": "^16.12.0",

@@ -8,7 +8,6 @@ module.exports = {
     '.+\\.(j|t)sx?$': '<rootDir>/node_modules/ts-jest',
   },
   transformIgnorePatterns: [`node_modules/(?!${esModules}/.*)`, `/images/.+`],
-  testPathIgnorePatterns: ['<rootDir>/e2e/.*'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
     '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|ttf|svg|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':

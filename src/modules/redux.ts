@@ -5,6 +5,10 @@ import { ThunkDispatch } from 'redux-thunk'
 import actionCreatorFactory, { AnyAction } from 'typescript-fsa'
 import { reducerWithInitialState } from 'typescript-fsa-reducers'
 import { RouterState } from 'connected-react-router'
+import {
+  reducer as lookingBackReducer,
+  State as LookingBackState,
+} from './looking-backs/redux'
 
 export type ActionDispatch<T = any> = (props?: any) => Action<T>
 
@@ -46,15 +50,14 @@ const reducer = reducerWithInitialState(initialState)
 export type AppState = {
   app: State
   router: RouterState
-  // lookingBacks: LookingBackState
+  lookingBacks: LookingBackState
 }
 
 const reducers = (history: History) =>
   combineReducers<AppState>({
     app: reducer,
     router: connectRouter(history),
-    // TODO: create lookingBackReducer
-    // lookingBacks: lookingBackReducer,
+    lookingBacks: lookingBackReducer,
   })
 
 export default reducers
