@@ -1,7 +1,7 @@
 import {
   applyMiddleware,
   // combineReducers,
-  compose,
+  compose
 } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { routerMiddleware } from 'connected-react-router'
@@ -18,7 +18,7 @@ interface Window {
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 export default configureStore({
-  reducer: reducer(history),
+  reducer: reducer(history)
   // middleware: composeEnhancers(
   //   applyMiddleware(routerMiddleware(history), thunkMiddleware)
   // ),

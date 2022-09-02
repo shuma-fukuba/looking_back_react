@@ -9,12 +9,12 @@ export default {
     try {
       const res = await axios.get<T>(url, {
         params,
-        url,
+        url
       })
 
       return {
         data: res.data,
-        status: res.status,
+        status: res.status
       }
     } catch (e) {
       throw handleError(e)
@@ -28,7 +28,7 @@ export default {
 
       return {
         data: res.data,
-        status: res.status,
+        status: res.status
       }
     } catch (e) {
       throw handleError(e)
@@ -42,7 +42,7 @@ export default {
 
       return {
         data: res.data,
-        status: res.status,
+        status: res.status
       }
     } catch (e) {
       throw handleError(e)
@@ -53,15 +53,15 @@ export default {
 
     try {
       const res = await axios.delete<T>(url, {
-        data: params,
+        data: params
       })
 
       return {
         data: res.data,
-        status: res.status,
+        status: res.status
       }
     } catch (e) {
       throw handleError(e)
     }
-  },
+  }
 }

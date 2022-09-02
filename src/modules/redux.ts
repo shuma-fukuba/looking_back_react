@@ -7,8 +7,9 @@ import { reducerWithInitialState } from 'typescript-fsa-reducers'
 import { RouterState } from 'connected-react-router'
 import {
   reducer as lookingBackReducer,
-  State as LookingBackState,
+  State as LookingBackState
 } from './looking-backs/redux'
+import { reducer as AuthReducer, State as AuthState } from './auth/redux'
 
 export type ActionDispatch<T = any> = (props?: any) => Action<T>
 
@@ -31,14 +32,14 @@ type State = {
 }
 
 const initialState: State = {
-  initialized: false,
+  initialized: false
 }
 
 const create = actionCreatorFactory('app')
 const initialize = create<boolean>('SET_INITIATED')
 
 const actions = {
-  initialize,
+  initialize
 }
 
 const reducer = reducerWithInitialState(initialState)
@@ -51,6 +52,7 @@ export type AppState = {
   app: State
   router: RouterState
   lookingBacks: LookingBackState
+  auth: AuthState
 }
 
 const reducers = (history: History) =>
@@ -58,6 +60,7 @@ const reducers = (history: History) =>
     app: reducer,
     router: connectRouter(history),
     lookingBacks: lookingBackReducer,
+    auth: AuthReducer
   })
 
 export default reducers

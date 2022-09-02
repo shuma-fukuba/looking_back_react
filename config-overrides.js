@@ -1,21 +1,6 @@
 
 const path = require('path')
-const fs = require('fs')
 
-const cMapsDir = path.join(
-  path.dirname(require.resolve('pdfjs-dist/package.json')),
-  'cmaps'
-)
-const copyDir = (from, to) => {
-  // Ensure target directory exists
-  fs.mkdirSync(to, { recursive: true })
-
-  const files = fs.readdirSync(from)
-  files.forEach(file => {
-    fs.copyFileSync(path.join(from, file), path.join(to, file))
-  })
-}
-copyDir(cMapsDir, 'public/cmaps/')
 const {
   override,
   addWebpackAlias,

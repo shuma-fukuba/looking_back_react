@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "./",
     "target": "es6",
     "lib": [
       "dom",
@@ -24,15 +24,6 @@
   },
   "include": [
     "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ],
-  "types": [
-    "node",
-    "jest",
-    "@testing-library/jest-dom"
   ],
   "extends": "./tsconfig.paths.json"
 }

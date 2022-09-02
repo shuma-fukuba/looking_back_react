@@ -3,15 +3,15 @@ const handleError = (error: any) => {
     return {
       data: {
         detail: 'インターネットに接続されていません',
-        error,
+        error
       },
-      status: 499,
+      status: 499
     }
   }
 
   return {
     data: error.response.data,
-    status: error.response.status,
+    status: error.response.status
   }
 }
 
