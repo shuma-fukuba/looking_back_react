@@ -1,11 +1,13 @@
-import React, { memo } from 'react'
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './HomePage'
 
-const Root: React.FC<any> = memo(() => {
-  return <Component />
-})
-
-export const Component: React.FC<any> = () => {
-  return <div>welcome to kingBack</div>
+const LookingBackPage: React.FC<any> = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+    </Routes>
+  )
 }
 
-export default Root
+export default LookingBackPage

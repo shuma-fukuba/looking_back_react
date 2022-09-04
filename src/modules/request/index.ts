@@ -63,5 +63,29 @@ export default {
     } catch (e) {
       throw handleError(e)
     }
+  },
+  postToken: async <T>(option: RequestOption): Promise<Response<T>> => {
+    const { url, params } = option
+    const config = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    }
+    try {
+      const res = await axios.post<T>(
+        url,
+        {
+          data: params
+        },
+        config
+      )
+
+      return {
+        data: res.data,
+        status: res.status
+      }
+    } catch (e) {
+      throw handleError(e)
+    }
   }
 }
